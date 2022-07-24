@@ -11,28 +11,30 @@ const AppNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+    <div>
+      <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"></link>
+
+      <Navbar className="navbar" expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-          Lyric Finder App
+          <Navbar.Brand as={Link} to='/' className="brand">
+            Lyrics Search
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
+              <Nav.Link as={Link} to='/' className="button">
                 Search For Lyrics
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
+              {/* if user is logged in show saved Lyrics and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
                     See Your Lyrics
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} className="button">Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} className="button">Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -70,7 +72,7 @@ const AppNavbar = () => {
           </Modal.Body>
         </Tab.Container>
       </Modal>
-    </>
+    </div>
   );
 };
 
