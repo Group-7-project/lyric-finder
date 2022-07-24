@@ -122,7 +122,7 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
-          {searchedLyric.length
+          {searchedLyrics.length
             ? `Viewing ${searchedLyrics.length} results:`
             : <PopularList popular={popular} />}
         </h2>
