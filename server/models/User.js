@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const movieSchema = require('./Movie');
+const lyricSchema = require('./Lyric');
 
 const userSchema = new Schema(
   {
@@ -20,7 +20,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    savedMovies: [movieSchema],
+    savedLyrics: [lyricSchema],
   },
   // set this to use virtual below
   {
