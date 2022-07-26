@@ -6,7 +6,7 @@ export default class Navbar extends Component {
       <div>
         <nav className="navbar navbar-dark bg-primary mb-5">
             <span className="navbar-brand mb-0 h1 mx-auto">
-               Songs & lyrics
+               Welcome to the Lyric Finder!
             </span>
             </nav>
       </div>
