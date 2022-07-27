@@ -18,14 +18,14 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    popularLyric: () => {
-      return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
-      .then(res => res.json())
-    },
-    singleLyric: (root, args) => {
-      return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
-      .then(res => res.json())
-    },
+    // popularLyric: () => {
+    //   return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+    //   .then(res => res.json())
+    // },
+    // singleLyric: (root, args) => {
+    //   return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
+    //   .then(res => res.json())
+    // },
     // savedLyrics: async (parent, { username }) => {
     //   const params = username ? { username } : {};
     //   return Lyric.find(params).sort({ createdAt: -1 });
