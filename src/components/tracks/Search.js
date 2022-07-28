@@ -42,15 +42,15 @@ class Search extends Component {
           return (
             <div className="card card-body mb-3 p-3 bg-info shadow p-3 mb-5 bg-body rounded">
               <h1 className="display-2 text-center"><strong>
-              <i class="fa-thin fa-list-music"></i> Search For Any Song
+              <i class="fa-thin fa-list-music"></i> Search For Any Movie
               </strong></h1>
-              <p className="lead text-center">Get the lyrics for any song</p>
+              <p className="lead text-center">Get information about your favourite flick!</p>
               <form onSubmit={this.findTrack.bind(this, dispatch)}>
                 <div className="form-group">
                   <input
                     type="text"
                     className="form-control form-control-lg"
-                    placeholder="Song title..."
+                    placeholder="Movie title..."
                     name="trackTitle"
                     value={this.state.trackTitle}
                     onChange={this.onChange}
@@ -60,7 +60,7 @@ class Search extends Component {
                   className="btn btn-warning btn-lg btn-block mb-5"
                   type="submit"
                 >
-                  Get Track Lyrics
+                  Go!
                 </button>
               </form>
             </div>

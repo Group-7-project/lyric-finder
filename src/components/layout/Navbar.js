@@ -8,7 +8,7 @@ export default class Navbar extends Component {
             <span className="navbar-brand mb-0 h1 mx-auto">
               
             
-               Welcome to the Lyric Finder!
+               Welcome to the Movie Finder!
             </span>
             </nav>
       </div>
