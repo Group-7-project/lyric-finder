@@ -7,7 +7,7 @@
 
 
 ## Table of Contents
-1. [Description](#description)
+1. [Who we are](#description)
 2. [Motivation](#motivation)
 3. [Challenges](#challenges)
 4. [Technologies Applied](#technologies)
@@ -16,26 +16,40 @@
 7. [Links](#links)
 
 <a name='description'></a>
-## Description
+## Who we are
 
-123...... 
+The Problem:
+With so many streaming platforms, new movies coming out all the time, and so many different options, how do you know what to dedicate your movie night to?
+
+The Idea:
+Why not get a little more information, or a movie synopsis just by searching it up?
+
+The Solution:
+Our project allows the user to enter the name of a movie, and quickly learn what its about to make sure its the right choice for their movie night.
 
 <a name='motivation'></a>
 ## Motivation
-123...
+
+Watching movies could be motivational in many ways. Giving your mind a break from work for something enjoyable could motivate you to be more productive when you get back to it and to ward off feelings of burnout.
+
 
 <a name='challenges'></a>
 ## Challenges
-123...
+FindItOut is for those people who love movies, but just want to pick the right movie. What better way than to read a summary of the movie you are interested in to make sure its the right choice?
+
+With so many different streaming platforms, so many different options, how do we know we are picking the right movie? We wanted to use technology to make it easier for the consumer to have the information they need to make an informed decision.
 
 <a name='technologies'></a>
 ## Technologies Applied
 
-* JavaScript
-* NodeJS
-* Express
-* MySQL
-* Handlebars
+* Express.js
+* Mysql2
+* Sequelize
+* .env package
+* Bcrypt Package
+* Express-handlebars
+* Express session
+* connect-session-sequelize
 * Heroku
 
 <a name='future'></a>
@@ -46,6 +60,8 @@
 
 * Alexander Rahmanov, Github: **[AlexRahmanov](https://github.com/AlexRahmanov)**
 * David Sklar, Github: **[davidhsklar](https://github.com/davidhsklar)**
+* Lucas Pittam, Github: **[lucaspittam](ttps://github.com/lucaspittam)**
+* Sultan Siddiqi, Github: **[sultansiddiqi](https://github.com/sultansiddiqi)**
 
 
 <a name='links'></a>
