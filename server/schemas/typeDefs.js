@@ -7,17 +7,17 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    popularMovies: Result
-    singleMovie(title: String!): Result
-    savedMovies: [Movie]
+    popularLyrics: Result
+    singleLyric(title: String!): Result
+    savedLyrics: [Lyric]
   }
 
   type Result {
     page: Int
-    results: [Movie]
+    results: [Lyric]
   }
 
-  type Movie {
+  type Lyric {
     id: String
     title: String
     overview: String
@@ -30,7 +30,7 @@ const typeDefs = gql`
     _id: ID
     username: String!
     email: String
-    savedMovies: [Movie]
+    savedLyrics: [Lyric]
 
   }
 
@@ -42,8 +42,8 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveMovie(id: String, title: String!, overview: String!, poster_path: String!, release_date: String, vote_average: String): User
-    removeMovie(id: String!): User
+    saveLyric(id: String, title: String!, overview: String!, poster_path: String!, release_date: String, vote_average: String): User
+    removeLyric(id: String!): User
   }
   
 

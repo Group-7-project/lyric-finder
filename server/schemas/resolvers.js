@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Movie } = require('../models');
+const { User, Lyric } = require('../models');
 const { signToken } = require('../utils/auth');
 const fetch = require('node-fetch');
 require('dotenv').config();
@@ -11,24 +11,24 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('savedMovies');
+          .populate('savedLyrics');
 
         return userData;
       }
 
       throw new AuthenticationError('Not logged in');
     },
-    popularMovies: () => {
-      return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
-      .then(res => res.json())
-    },
-    singleMovie: (root, args) => {
-      return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
-      .then(res => res.json())
-    },
-    // savedMovies: async (parent, { username }) => {
+    // popularLyric: () => {
+    //   return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+    //   .then(res => res.json())
+    // },
+    // singleLyric: (root, args) => {
+    //   return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
+    //   .then(res => res.json())
+    // },
+    // savedLyrics: async (parent, { username }) => {
     //   const params = username ? { username } : {};
-    //   return Movie.find(params).sort({ createdAt: -1 });
+    //   return Lyric.find(params).sort({ createdAt: -1 });
     // }
   },
 
@@ -55,25 +55,25 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    saveMovie: async (parent, { id, title, overview, poster_path, release_date, vote_average }, context) => {
+    saveLyric: async (parent, { id, title, overview, poster_path, release_date, vote_average }, context) => {
       if (context.user) {
 
         const mutatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedMovies: { id, title, overview, poster_path, release_date, vote_average } } },
+          { $push: { savedLyrics: { id, title, overview, poster_path, release_date, vote_average } } },
           { new: true, useFindAndModify: false }
         );
 
         return mutatedUser;
       }
 
-      throw new AuthenticationError('Error saving movie');
+      throw new AuthenticationError('Error saving lyric');
     },
-    removeMovie: async (parent, { id }, context) => {
+    removeLyric: async (parent, { id }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedMovies: { id } } },
+          { $pull: { savedLyrics: { id } } },
           { new: true }
         );
 

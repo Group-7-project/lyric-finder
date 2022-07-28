@@ -17,7 +17,7 @@ const SearchBooks = () => {
   // create state for holding returned api data
   const [searchedLyrics, setSearchedLyrics] = useState([]);
 
-  // query for popular movie list
+  // query for popular lyric list
   const { loading, data } = useQuery(QUERY_POPULAR);
 
   const popular = data?.popularLyrics || [];

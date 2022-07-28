@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 
-// schema for movies that are saved by the user
-const movieSchema = new Schema({
+// schema for lyrics that are saved by the user
+const lyricSchema = new Schema({
   id: {
     type: String,
     unique: true
@@ -32,4 +32,4 @@ const movieSchema = new Schema({
   }
 });
 
-module.exports = movieSchema;
+module.exports = lyricSchema;
