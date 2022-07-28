@@ -32,12 +32,14 @@ Our project allows the user to enter the name of a movie, and quickly learn what
 
 Watching movies could be motivational in many ways. Giving your mind a break from work for something enjoyable could motivate you to be more productive when you get back to it and to ward off feelings of burnout.
 
+With so many different streaming platforms, so many different options, how do we know we are picking the right movie? We wanted to use technology to make it easier for the consumer to have the information they need to make an informed decision.
+
 
 <a name='challenges'></a>
 ## Challenges
 FindItOut is for those people who love movies, but just want to pick the right movie. What better way than to read a summary of the movie you are interested in to make sure its the right choice?
 
-With so many different streaming platforms, so many different options, how do we know we are picking the right movie? We wanted to use technology to make it easier for the consumer to have the information they need to make an informed decision.
+
 
 <a name='technologies'></a>
 ## Technologies Applied
