@@ -45,7 +45,7 @@
 ## Contributors
 
 * Alexander Rahmanov, Github: **[AlexRahmanov](https://github.com/AlexRahmanov)**
-*
+* David Sklar, Github: **[davidhsklar](https://github.com/davidhsklar)**
 
 
 <a name='links'></a>
