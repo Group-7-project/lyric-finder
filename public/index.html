@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#317EFB">
-    <link rel="shortcut icon" href="./lyric logo.png" />
+    <link rel="shortcut icon" href="./Red Black Simple Modern Studio Logo.png" />
     <link rel="manifest" href="./manifest.json" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./src/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
  
-    <title>Lyric Finder</title>
+    <title>Find It Out</title>
   </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  
+  <body><style type="text/css">body { background: rosybrown !important; }</style>
+    <div id="root">
+      <div className = "card bg-danger">
+      </div>
+    </div>
+    <script src="https://kit.fontawesome.com/1b919f8e84.js" crossorigin="anonymous"></script>
   </body>
+  <script>
+    (function() {
+      if("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js")
+          .then(() => console.log("Service Worker registered successfully."))
+          .catch(error => console.log("Service Worker registration failed:", error));
+      }
+    })();
+    </script>
 </html>

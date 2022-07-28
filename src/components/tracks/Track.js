@@ -11,12 +11,12 @@ const Track=props=> {
             <h5>{track.artist_name}</h5>
             <p className="card-text">
               <strong>
-                <i className="fas fa-play" /> Track
+                <i className="fas fa-play" /> Moive
               </strong>
               : {track.track_name}
               <br />
               <strong>
-                <i className="fas fa-compact-disc" /> Album
+                <i className="fas fa-compact-disc" /> Movie
               </strong>
               : {track.album_name}
             </p>
@@ -24,7 +24,7 @@ const Track=props=> {
               to={`lyrics/track/${track.track_id}`}
               className="btn btn-info btn-block"
             >
-              <i className="fas fa-chevron-right" /> View Lyrics
+              <i className="fas fa-chevron-right" /> View Info
             </Link>
           </div>
         </div>
