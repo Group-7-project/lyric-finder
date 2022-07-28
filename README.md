@@ -64,6 +64,7 @@ FindItOut is for those people who love movies, but just want to pick the right m
 * David Sklar, Github: **[davidhsklar](https://github.com/davidhsklar)**
 * Lucas Pittam, Github: **[lucaspittam](https://github.com/lucaspittam)**
 * Sultan Siddiqi, Github: **[sultansiddiqi](https://github.com/sultansiddiqi)**
+* Tommy Otis, Github: **[xdatalinq](https://github.com/xdatalinq))**
 
 
 <a name='links'></a>
