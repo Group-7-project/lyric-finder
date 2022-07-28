@@ -11,9 +11,8 @@
 2. [Motivation](#motivation)
 3. [Challenges](#challenges)
 4. [Technologies Applied](#technologies)
-5. [Future Development](#future)
-6. [Contributors](#contributors)
-7. [Links](#links)
+5. [Contributors](#contributors)
+6. [Links](#links)
 
 <a name='description'></a>
 ## Who we are
@@ -54,9 +53,6 @@ FindItOut is for those people who love movies, but just want to pick the right m
 * connect-session-sequelize
 * Heroku
 
-<a name='future'></a>
-## Future Development
-123...
 <a name='contributors'></a>
 ## Contributors
 
@@ -64,7 +60,7 @@ FindItOut is for those people who love movies, but just want to pick the right m
 * David Sklar, Github: **[davidhsklar](https://github.com/davidhsklar)**
 * Lucas Pittam, Github: **[lucaspittam](https://github.com/lucaspittam)**
 * Sultan Siddiqi, Github: **[sultansiddiqi](https://github.com/sultansiddiqi)**
-* Tommy Otis, Github: **[xdatalinq](https://github.com/xdatalinq))**
+* Tommy Otis, Github: **[xdatalinq](https://github.com/xdatalinq)**
 
 
 <a name='links'></a>
