@@ -52,10 +52,10 @@ class Lyrics extends Component {
   
             <ul className="list-group mt-3">
               <li className="list-group-item">
-                <strong>Album ID</strong>: {track.album_id}
+                <strong>Movie ID</strong>: {track.album_id}
               </li>
               <li className="list-group-item">
-                <strong>Song Genre</strong>:{' '}
+                <strong>Movie Genre</strong>:{' '}
                { track.primary_genres.music_genre_list.length === 0 ? 'NO GENRE AVAILABLE' : track.primary_genres.music_genre_list[0].music_genre.music_genre_name }
               </li>
               <li className="list-group-item">
