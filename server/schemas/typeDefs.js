@@ -1,6 +1,4 @@
 const { gql } = require('apollo-server-express');
-
-// need to add properties related to the project
 const typeDefs = gql`
 
   type Query {

@@ -26,10 +26,6 @@ const resolvers = {
       return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
       .then(res => res.json())
     },
-    // savedMovies: async (parent, { username }) => {
-    //   const params = username ? { username } : {};
-    //   return Movie.find(params).sort({ createdAt: -1 });
-    // }
   },
 
   Mutation: {

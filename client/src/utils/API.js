@@ -1,17 +1,14 @@
 require('dotenv').config();
 const { apiKey } = process.env;
 
-// get request for popular Lyrics for initial page load
 export const getPopularLyrics = () => {
     return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.apiKey}&language=en-US&page=1`);
 }
 
-// search for a single Lyric title
 export const searchLyrics = (lyricTitle) => {
     return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=55def83f6c5739d768f4cf225b79eed3&language=en-US&query=${lyricTitle}&page=1`)
 }
 
-// route to get logged in user's info (needs the token)
 export const getMe = (token) => {
     return fetch('/api/users/me', {
       headers: {
@@ -41,7 +38,6 @@ export const getMe = (token) => {
     });
 };
 
-// save Lyric data for a logged in user
 export const saveLyric = (lyricData, token) => {
     return fetch('/api/users', {
         method: 'PUT',
@@ -53,7 +49,6 @@ export const saveLyric = (lyricData, token) => {
     });
 };
 
-// remove a saved lyric 
 export const deleteLyric = (lyricId, token) => {
     return fetch(`/api/users/lyrics/${lyricId}`, {
       method: 'DELETE',

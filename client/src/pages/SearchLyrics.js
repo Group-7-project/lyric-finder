@@ -12,20 +12,11 @@ import { useMutation } from '@apollo/client';
 import { SAVE_LYRIC } from '../utils/mutations';
 
 const SearchBooks = () => {
-  // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
-  // create state for holding returned api data
   const [searchedLyrics, setSearchedLyrics] = useState([]);
-
-  // query for popular lyric list
   const { loading, data } = useQuery(QUERY_POPULAR);
-
   const popular = data?.popularLyrics || [];
-
-  // create state to hold saved bookId values
   const [savedLyricIds, setSavedLyricIds] = useState([]);
-
-  // create method to search for books and set state on form submit
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -61,12 +52,8 @@ const SearchBooks = () => {
     }
   }
 
-  // create function to handle saving a book to our database
   const handleSaveLyric = async (lyricId) => {
-    // find the book in `searchedBooks` state by the matching id
     const lyricToSave = searchedLyrics.find((lyric) => lyric.id === lyricId);
-
-    // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -79,8 +66,7 @@ const SearchBooks = () => {
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
-
-      // if book successfully saves to user's account, save book id to state
+      
       setSavedLyricIds([...savedLyricIds, lyricToSave.lyricId]);
     } catch (err) {
       console.error(err);
