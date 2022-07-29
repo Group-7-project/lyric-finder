@@ -24,7 +24,6 @@ export const ADD_USER = gql`
   }
 `;
 
-//change const name related to the project
 export const SAVE_MOVIE = gql`
   mutation saveMovie($id: String, $title: String!, $overview: String!, $poster_path: String!, $release_date: String, $vote_average: String) {
     saveMovie(id: $id, title: $title, overview: $overview, poster_path: $poster_path, release_date: $release_date, vote_average: $vote_average) {
@@ -43,7 +42,6 @@ export const SAVE_MOVIE = gql`
   }
 `;
 
-//change const name related to the project
 export const REMOVE_BOOK = gql`
   mutation removeBook($bookId: ID!) {
     removeBook(bookId: $bookId) {

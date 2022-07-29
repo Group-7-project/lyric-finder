@@ -6,17 +6,11 @@ const PopularList = ({ popular }) => {
     console.log(popular)
     const imgRoute = 'https://image.tmdb.org/t/p/w500';
 
-    // create state for holding returned api data
     const [searchedLyrics, setSearchedLyrics] = useState([]);
-    // create state to hold saved bookId values
     const [savedLyricIds, setSavedLyricIds] = useState([]);
-
-     // create function to handle saving a book to our database
     const handleSaveLyric = async (lyricId) => {
-        // find the book in `searchedBooks` state by the matching id
-        const lyricToSave = searchedLyrics.find((lyric) => lyric.id === lyricId);
 
-        // get token
+        const lyricToSave = searchedLyrics.find((lyric) => lyric.id === lyricId);
         const token = Auth.loggedIn() ? Auth.getToken() : null;
 
         if (!token) {
@@ -30,7 +24,6 @@ const PopularList = ({ popular }) => {
             throw new Error('something went wrong!');
         }
 
-        // if book successfully saves to user's account, save book id to state
         setSavedLyricIds([...savedLyricIds, lyricToSave.lyricId]);
         } catch (err) {
         console.error(err);
