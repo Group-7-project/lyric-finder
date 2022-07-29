@@ -7,7 +7,7 @@ import LoginForm from './LoginForm';
 import Auth from '../utils/auth';
 
 const AppNavbar = () => {
-  // set modal display state
+
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -25,7 +25,9 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/' className="button">
                 Search For Lyrics
               </Nav.Link>
-              {/* if user is logged in show saved Lyrics and logout */}
+              {
+                
+              }
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
@@ -40,13 +42,17 @@ const AppNavbar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* set modal data up */}
+      {
+
+      }
       <Modal
         size='lg'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
+        {
+
+        }
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
