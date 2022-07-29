@@ -8,7 +8,6 @@ const PopularList = ({ popular }) => {
 
     const [searchedLyrics, setSearchedLyrics] = useState([]);
     const [savedLyricIds, setSavedLyricIds] = useState([]);
-
     const handleSaveLyric = async (lyricId) => {
 
         const lyricToSave = searchedLyrics.find((lyric) => lyric.id === lyricId);
@@ -24,6 +23,7 @@ const PopularList = ({ popular }) => {
         if (!response.ok) {
             throw new Error('something went wrong!');
         }
+
         setSavedLyricIds([...savedLyricIds, lyricToSave.lyricId]);
         } catch (err) {
         console.error(err);

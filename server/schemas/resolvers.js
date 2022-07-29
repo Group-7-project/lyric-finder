@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Lyric } = require('../models');
+const { User, Movie } = require('../models');
 const { signToken } = require('../utils/auth');
 const fetch = require('node-fetch');
 require('dotenv').config();
@@ -11,18 +11,18 @@ const resolvers = {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
-          .populate('savedLyrics');
+          .populate('savedMovies');
 
         return userData;
       }
 
       throw new AuthenticationError('Not logged in');
     },
-    popularLyric: () => {
+    popularMovies: () => {
       return fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
       .then(res => res.json())
     },
-    singleLyric: (root, args) => {
+    singleMovie: (root, args) => {
       return fetch(`https://api.themoviedb.org/3/search/movie/?api_key=${apiKey}&language=en-US&query=${args.title}&page=1`)
       .then(res => res.json())
     },
@@ -51,25 +51,25 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    saveLyric: async (parent, { id, title, overview, poster_path, release_date, vote_average }, context) => {
+    saveMovie: async (parent, { id, title, overview, poster_path, release_date, vote_average }, context) => {
       if (context.user) {
 
         const mutatedUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
-          { $push: { savedLyrics: { id, title, overview, poster_path, release_date, vote_average } } },
+          { $push: { savedMovies: { id, title, overview, poster_path, release_date, vote_average } } },
           { new: true, useFindAndModify: false }
         );
 
         return mutatedUser;
       }
 
-      throw new AuthenticationError('Error saving lyric');
+      throw new AuthenticationError('Error saving movie');
     },
-    removeLyric: async (parent, { id }, context) => {
+    removeMovie: async (parent, { id }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { savedLyrics: { id } } },
+          { $pull: { savedMovies: { id } } },
           { new: true }
         );
 
